@@ -10,7 +10,7 @@ const authroute=require('../routers/authroute');
 const todoroute=require('../routers/todoroute');
 const { error404 } = require('../routecontroller/error');
 const session =require('express-session');
-require('dotenv').config();
+require('dotenv').config({ path: path.join(rootdir,'.env') });
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
