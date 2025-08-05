@@ -12,7 +12,7 @@ require('dotenv').config();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use(express.static(path.join(rootdir,'css/js')));
+app.use(express.static(path.join(rootdir,'public')));
 app.use(cookieParser());
 app.use(session({
     secret:"mohdkaif",
