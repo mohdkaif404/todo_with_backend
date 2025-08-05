@@ -1,0 +1,29 @@
+{
+  "type": "commonjs",
+  "scripts": {
+    "build": "postcss public/style.css -o public/output.css",
+    "watch": "postcss public/style.css -o public/output.css --watch",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.1",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "express-validator": "^7.2.1",
+    "mongoose": "^8.17.0",
+    "nodemon": "^3.1.10",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.11",
+    "validator": "^13.15.15"
+  },
+  "name": "to-do",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "kaif",
+  "license": "ISC",
+  "description": ""
+}

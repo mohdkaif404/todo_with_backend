@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Stay organized with this clean and simple To-Do App. Add, manage, and track your daily tasks easily.">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="To-Do App, task manager, productivity, daily planner, checklist">
+    <meta name="author" content="Md Kaif">
+    <title><%= to %></title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caveat&family=Coming+Soon&family=Gloria+Hallelujah&family=Homemade+Apple&family=Indie+Flower&family=Patrick+Hand&family=Permanent+Marker&family=Reenie+Beanie&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="text-[var(--text-color)]">
+    <div class="root bg-[var(--bg-color)] text-[var(--text-color)] w-[100vw] h-[100vh] overflow-hidden">
+        <div class="flex box w-full h-full">
+            <%- include('partials/sidebar.ejs') %>
+            <div class="walle w-full overflow-hidden overflow-y-scroll">
+                <div class="upcomming overflow-x-hidden">
+                    <div class="sticky text-5xl m-3 font-extrabold">Upcomming</div>
+                    <div class="notes-wrapper ">
+                        <% todos.forEach(element => {%>
+                            <div class="note <%= element.color %>" id=<%= element._id %>><i class="note-close fa-solid fa-xmark p-2 mt-1 ml-1 hover:bg-white"></i><p class="task-head ml-1 text-4xl"><%= element.title %></p><ul class="bullets-<%= element.priority %> list-disc flex flex-col ml-7 p-2 items-start text-base"><%- element.subtasks.join(' ') %></ul></div>
+                            
+                        <% }); %>
+                        <div class="note-adder bg-[var(--hover-menu)] hover:bg-gray-600 hover:text-white cursor-pointer">
+                            <div class="add-task h-full flex justify-center items-center text-7xl">+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/form.ejs') %>
+</body>
+<script src="index.js"></script>
+
+</html>

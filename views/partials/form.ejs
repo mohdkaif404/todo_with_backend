@@ -1,0 +1,79 @@
+<div
+    class="task-container display-form flex justify-center items-center bg-transparent overflow-hidden w-full h-[100vh]">
+    <div class="task-form border-none w-[90%] max-w-[25rem] bg-[var(--bg-color)] rounded-md">
+        <i class="close-form fa-solid fa-xmark p-2 ml-2 mt-2 hover:bg-[var(--text-color)] hover:text-white"></i>
+        <form action="" class="form p-4">
+            <div class="heading text-base font-bold ">Task Heading</div>
+            <input type="search" name="head" id="head" placeholder="Give Heading"
+                class="flex w-full bg-[var(--bg-menu)] rounded-md items-center focus:outline-none my-1 p-2">
+            <div class="bullets text-base mt-4  w-full font-bold">Bullets</div>
+            <div class="bullet-add flex bg-[var(--bg-menu)] rounded-md items-center justify-between"><input
+                    type="search" name="desc" id="desc" placeholder="Descriptions"
+                    class="bg-transparent p-2 w-full focus:outline-0 ">
+                <button type="button"
+                    class="add-button p-3 focus:outline-none text-white bg-[var(--form-buttons)] hover:bg-[var(--form-hover)] focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm  dark:bg-[var(--form-buttons)] dark:hover:bg-purple-700 dark:focus:ring-purple-900">ADD</button>
+            </div>
+            <div class="bullets-wrap font-bold bg-[var(--bg-menu)] overflow-x-hidden h-[12vh] rounded-md mt-2">
+            </div>
+            <div
+    class="priorit font-semibold flex justify-between overflow-hidden bg-[var(--bg-menu)] w-full rounded-md items-center mt-5">
+    
+    <div class="w-1/3 text-center">
+        <input type="radio" id="i" name="priority" value="important" class="sr-only peer" />
+        <label for="i"
+            class="block py-2 px-3 cursor-pointer peer-checked:bg-[var(--form-buttons)] peer-checked:text-white transition-colors rounded-md">Important</label>
+    </div>
+    
+    <div class="w-1/3 text-center">
+        <input type="radio" id="t" name="priority" value="today" class="sr-only peer" checked />
+        <label for="t"
+            class="block py-2 px-3 cursor-pointer peer-checked:bg-[var(--form-buttons)] peer-checked:text-white transition-colors rounded-md">Today</label>
+    </div>
+    
+    <div class="w-1/3 text-center">
+        <input type="radio" id="u" name="priority" value="upcomming" class="sr-only peer" />
+        <label for="u"
+            class="block py-2 px-3 cursor-pointer peer-checked:bg-[var(--form-buttons)] peer-checked:text-white transition-colors rounded-md">Upcoming</label>
+    </div>
+</div>
+
+
+            <div class="sticky-color mt-4 bg-[var(--bg-menu)] p-2 rounded-md">
+                <div class="sticky mb-1 text-gray-500 font-semibold">Choose Sticky Color</div>
+                <div class="colors flex flex-wrap gap-3">
+                    <div
+                        class="red color bg-[var(--card-emerald)] p-3 rounded-3xl hover:shadow-[0_0_10px_var(--card-emerald)] hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-check active"></i>
+                    </div>
+                    <div
+                        class="purple color bg-[var(--card-orange)] p-3 rounded-3xl hover:shadow-[0_0_10px_var(--card-orange)] hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div
+                        class="purple color bg-[var(--card-cyan)] p-3 rounded-3xl hover:shadow-[0_0_10px_var(--card-cyanb)] hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div
+                        class="red color bg-[var(--card-red)] p-3 rounded-3xl hover:shadow-[0_0_10px_var(--card-red)] hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div
+                        class="purple color bg-[var(--card-purple-light)] p-3 rounded-3xl hover:shadow-[0_0_10px_var(--card-purple-light)] hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div
+                        class="purple color bg-[var(--card-purple-lighter)] p-3 rounded-3xl hover:shadow-[0_0_10px_var(--card-purple-lighter)] hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div
+                class="submit cursor-pointer flex justify-center text-white items-center bg-[var(--form-buttons)] hover:bg-[var(--form-hover)] p-3 rounded-xl mt-4">
+                ADD</div>
+
+        </form>
+    </div>
+</div>

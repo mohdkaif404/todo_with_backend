@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Stay organized with this clean and simple To-Do App. Add, manage, and track your daily tasks easily.">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="To-Do App, task manager, productivity, daily planner, checklist">
+    <meta name="author" content="Md Kaif">
+    <title>about</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caveat&family=Coming+Soon&family=Gloria+Hallelujah&family=Homemade+Apple&family=Indie+Flower&family=Patrick+Hand&family=Permanent+Marker&family=Reenie+Beanie&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="text-[var(--text-color)]">
+    <div class="root bg-[var(--bg-color)] text-[var(--text-color)] w-[100vw] h-[100vh] overflow-hidden">
+        <div class="flex box w-full h-full">
+            <%- include('partials/sidebar.ejs') %>
+            <div class="walle w-full overflow-hidden overflow-y-scroll">
+                <div class="about w-full">
+                    <div class="about-head text-5xl m-3 font-extrabold">About Me</div>
+                    <div class="about-me p-2">
+                        <p class="text-gray-500 italic"><span class="font-extrabold">ToDo v1.O is Designed and Developed
+                                by Sunder Pichai</span>
+                        </p>
+                        <div class="contact text-3xl flex gap-2.5 mt-4 text-gray-500"><a href=""><i
+                                    class="fa-brands fa-github"></i></a><a href=""><i
+                                    class="fa-brands fa-whatsapp"></i></a><a href=""><i
+                                    class="fa-brands fa-instagram"></i></a><a href=""><i
+                                    class="fa-brands fa-linkedin"></i></a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <%- include('partials/form.ejs') %>
+</body>
+<script src="index.js"></script>
+
+</html>

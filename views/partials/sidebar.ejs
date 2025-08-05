@@ -1,0 +1,100 @@
+<div
+    class="menu bg-[var(--bg-menu)] p-3 m-3 mr-0 rounded-xl flex flex-col justify-between overflow-y-auto overflow-x-hidden">
+    <div class="wrap">
+        <div class="nav flex justify-between">
+            <div class="logo-box flex justify-center items-center text-xl font-semibold">Menu</div>
+            <div class="add-box text-4xl cursor-pointer hover:text-[var(--form-buttons)]">+</div>
+        </div>
+        <div class="search flex items-center my-2 bg-[var(--search-color)] p-1 rounded-xl">
+            <i class="fa-solid fa-magnifying-glass p-2"></i>
+            <input type="search" name="search" id="search" placeholder="search"
+                class="search-bar focus:outline-none overflow-hidden bg-transparent">
+        </div>
+        <div class="task-list">
+            <div class="task my-3">
+                <div class="task-logo font-bold text-md">Task</div>
+                <ul class="task-items">
+                    <li class=<%=`${to==='upcomming'?'active-list':''} menu-list`%> id="upcomming">
+                        <a href="/upcomming">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <p>Upcomming</p>
+                        </a>
+                    </li>
+                    <li class=<%=`${to==='/'?'active-list':''} menu-list`%> id="today">
+                        <a href="/">
+                            <i class="fa-solid fa-calendar-day"></i>
+                            <p>Today</p>
+                        </a>
+                    </li>
+                    <li class=<%=`${to==='important'?'active-list':''} menu-list`%> id="important">
+                        <a href="/important">
+                            <i class="fa-solid fa-star"></i>
+                            <p>Important</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="List my-3">
+                <div class="list-logo font-bold text-base">List</div>
+                <ul class="task-items">
+                    <li class="menu-list soon">
+                        <a href="commingsoon">
+                            <i class="fa-solid fa-list"></i>
+                            <p>List 1</p>
+                        </a>
+                    </li>
+                    <li class="menu-list soon">
+                        <a href="#">
+                            <i class="fa-solid fa-fingerprint"></i>
+                            <p>Personal</p>
+                        </a>
+                    </li>
+                    <li class="menu-list soon">
+                        <a href="commingsoon">
+                            <i class="fa-solid fa-plus"></i>
+                            <p>Add New List</p>
+                        </a>
+                    </li>
+                    <li class="theme-mode">
+                        <a href="#">
+                            <i class="fa-solid fa-sun active-theme"></i>
+                            <p>Change Theme</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <ul class="connect font-bold">
+        <% if (!login) {%>
+            <li class="menu-list soon" id="collab">
+            <a href="/signup">
+                <i class="fa-solid fa-link"></i>
+                <p>signup</p>
+            </a>
+        </li>
+        <%} %>
+        
+        <li class="menu-list" id="about">
+            <a href="about">
+                <i class="fa-solid fa-user"></i>
+                <p>About</p>
+            </a>
+        </li>
+        <% if (login) { %>
+            <li class="menu-list soon" id="logout">
+            <a href="/logout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <p>Logout</p>
+            </a>
+            </li>
+        <% } else {%>
+            <li class="menu-list soon" id="signup">
+            <a href="/login">
+                <i class="fa-solid fa-key"></i>
+                <p>Login</p>
+            </a>
+            </li>
+        <%}%>
+    </ul>
+</div>

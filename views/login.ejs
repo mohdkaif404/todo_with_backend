@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Stay organized with this clean and simple To-Do App. Add, manage, and track your daily tasks easily.">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="To-Do App, task manager, productivity, daily planner, checklist">
+    <meta name="author" content="Md Kaif">
+    <title><%=to%></title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caveat&family=Coming+Soon&family=Gloria+Hallelujah&family=Homemade+Apple&family=Indie+Flower&family=Patrick+Hand&family=Permanent+Marker&family=Reenie+Beanie&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="text-[var(--text-color)]">
+    <div class="root bg-[var(--bg-color)] text-[var(--text-color)] w-[100vw] h-[100vh] flex relative justify-center items-center">
+
+        
+        <div class="login bg-purple-300/40 backdrop-blur-[30px] max-w-[300px] p-4 rounded-md ">
+            <form action="<%= to %>" method="POST" class="p-2">
+                <h1 class="text-center my-3 font-bold text-2xl"><%= type %></h1>
+                <% if(errors.length>0){%>
+                    <div class="errors">
+                        <% errors.forEach(element => {%>
+                            <div class="error mb-1 text-xs bg-purple-200 border-l-2 border-l-purple-800 p-1.5"><i class="close-form fa-solid fa-xmark p-1 mr-1 hover:bg-[var(--text-color)] hover:text-white"></i><%= element %></div>
+                        <%}); %>
+                    </div>
+                <% } %>
+
+                <div class="input-wrapper flex flex-col ">
+                    <input type="email" name="email" id="email" placeholder="Email" class="my-3 bg-[var(--bg-menu)] p-1.5 rounded-md">
+                    <input type="password" name="password" id="password" placeholder="Password" class="my-1 p-1.5 bg-[var(--bg-menu)] rounded-md">
+                    <input type="submit" value="submit" class="bg-[var(--form-buttons)] text-white p-2 my-3 rounded-md">
+                    
+                </div>
+               
+                
+            </form>
+             
+        </div>
+        
+    </div>
+
+</body>
+<script src="index.js"></script>
+
+</html>
