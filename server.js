@@ -1,7 +1,9 @@
 const path=require('path');
 const express=require('express');
 const app=express();
+const ejs=require('ejs');
 const rootdir=require('./utills/pathutills');
+const userInfo=require('./models/user');
 const cookieParser=require('cookie-parser');
 const mongoose=require('mongoose')
 const authroute=require('./routers/authroute');
@@ -12,7 +14,7 @@ require('dotenv').config();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use(express.static(path.join(rootdir,'public')));
+app.use(express.static(path.join(rootdir,'css/js')));
 app.use(cookieParser());
 app.use(session({
     secret:"mohdkaif",
@@ -25,12 +27,12 @@ app.set('views',path.join(rootdir,'views'));
 app.use(todoroute);
 app.use(authroute);
 app.use(error404);
-const PORT=process.env.PORT|3000;
-app.listen(PORT ,()=>{
-   
+
+app.listen(3000,()=>{
+    console.log(`server started on port 3000`);
     mongoose.connect(`mongodb+srv://fardeenmohd404:${process.env.DB_PASSWORD}@todocluster.llblike.mongodb.net/?retryWrites=true&w=majority&appName=todocluster`).then((val)=>{
-        
+        console.log("DB connection succesfull");
     }).catch((err)=>{
-        console.log(err);
+        console.log("DB connection failed",err);
     })
 })
