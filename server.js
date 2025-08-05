@@ -1,16 +1,14 @@
 const path=require('path');
 const express=require('express');
 const app=express();
-const ejs=require('ejs');
-const rootdir=require('../utills/pathutills');
-const userInfo=require('../models/user');
+const rootdir=require('./utills/pathutills');
 const cookieParser=require('cookie-parser');
 const mongoose=require('mongoose')
-const authroute=require('../routers/authroute');
-const todoroute=require('../routers/todoroute');
-const { error404 } = require('../routecontroller/error');
+const authroute=require('./routers/authroute');
+const todoroute=require('./routers/todoroute');
+const { error404 } = require('./routecontroller/error');
 const session =require('express-session');
-require('dotenv').config({ path: path.join(rootdir,'.env') });
+require('dotenv').config();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
