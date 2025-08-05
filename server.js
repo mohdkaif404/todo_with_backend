@@ -14,7 +14,7 @@ require('dotenv').config();
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use(express.static(path.join(rootdir,'css/js')));
+app.use(express.static(path.join(__dirname,'public')));
 app.use(cookieParser());
 app.use(session({
     secret:"mohdkaif",
@@ -27,8 +27,8 @@ app.set('views',path.join(rootdir,'views'));
 app.use(todoroute);
 app.use(authroute);
 app.use(error404);
-
-app.listen(3000,()=>{
+const port=process.env.PORT|3000;
+app.listen(port,()=>{
     console.log(`server started on port 3000`);
     mongoose.connect(`mongodb+srv://fardeenmohd404:${process.env.DB_PASSWORD}@todocluster.llblike.mongodb.net/?retryWrites=true&w=majority&appName=todocluster`).then((val)=>{
         console.log("DB connection succesfull");
