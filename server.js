@@ -25,12 +25,12 @@ app.set('views',path.join(rootdir,'views'));
 app.use(todoroute);
 app.use(authroute);
 app.use(error404);
-
-app.listen(3000,()=>{
-    console.log(`server started on port 3000`);
+const PORT=process.env.PORT|3000;
+app.listen(PORT ,()=>{
+   
     mongoose.connect(`mongodb+srv://fardeenmohd404:${process.env.DB_PASSWORD}@todocluster.llblike.mongodb.net/?retryWrites=true&w=majority&appName=todocluster`).then((val)=>{
-        console.log("DB connection succesfull");
+        
     }).catch((err)=>{
-        console.log("DB connection failed",err);
+        console.log(err);
     })
 })
